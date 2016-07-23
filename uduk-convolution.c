@@ -166,7 +166,7 @@ conv (double *a, long a_len, double *b, long b_len)
         double m = inline_double_multiply(a[iz], b[j]);
         z = inline_double_add(z, m);
       }
-      i1--;
+      iz--;
       convSignal[i] = z;
     }
     g_print("%c[2J (uduk) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
