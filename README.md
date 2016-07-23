@@ -31,4 +31,8 @@ $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `
 ## TODO List
 - tweaks++
 
+## E-mail
+Feel free to drop me some bugs and issues iherlambang@gmail.com
+
+
 ![alt text] (http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png)
