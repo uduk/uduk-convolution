@@ -15,4 +15,4 @@ $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-confolution `pkg-co
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 
-(http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png)
+![alt text] (http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png)
