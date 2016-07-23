@@ -151,6 +151,7 @@ conv (double *a, long a_len, double *b, long b_len)
   
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (; i < len;) {
+   
     double z, t;
     long iz; 
     
