@@ -17,6 +17,7 @@ $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-co
 $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
 ```
 > pass -USE_UDUK_INLINE_CONVOLUTION macro to gcc for turtle-ish UDUK
+
 > pass -DUSE_SLOW_TURTLE_CONVOLUTION macro to gcc for slow turtle convolution
 
 ## Free Impulse Response
