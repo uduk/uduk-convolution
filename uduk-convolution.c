@@ -14,7 +14,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <fftw3.h>
 #include <sndfile.h>
 #include <glib.h>
 
