@@ -1,7 +1,7 @@
 # uduk-convolution
-Fast direct convolution of two audio sources. Uduk Convolution is a great tool to tailor your guitar sounds for more realistic .
+Written in pure C with inline assembly, uduk-convolution is a great tool to tailor your guitar sounds for more realistic.
 
-## Usage
+## Fast direct convolution of two audio sources
 $ ./uduk-convolution input.wav impulse.wav output.wav
 
 ## Compiling
