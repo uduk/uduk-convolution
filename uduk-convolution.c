@@ -169,7 +169,12 @@ conv (double *a, long a_len, double *b, long b_len)
         z = inline_double_add(z, m);
       }
       
-      iz--;
+      __asm__ __volatile__ (
+          "sub $0x1, %0"
+        : "+r" (iz) 
+        : : "cc"
+      );  
+      
       convSignal[i] = z;
       
       __asm__ __volatile__ (
