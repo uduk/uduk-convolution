@@ -18,11 +18,15 @@
 #include <glib.h>
 
 #define CHUNKSIZE 8
+#define RATIO     0.666
 
 double *
 readWav (char *filename, long *len) {
 
   SF_INFO sndInfo_r;
+  double *buffer_r;
+  long numFrames;
+
   SNDFILE *sndFile_r = sf_open(filename, SFM_READ, &sndInfo_r);
   if (sndFile_r == NULL) {
     fprintf(stderr, "Error reading source file '%s': %s\n", filename, sf_strerror(sndFile_r));
@@ -35,20 +39,14 @@ readWav (char *filename, long *len) {
     exit(EXIT_FAILURE);
   }
 
-  if (sndInfo_r.channels != 1) {
-    fprintf(stderr, "Wrong number of channels\n");
-    sf_close(sndFile_r);
-    exit(EXIT_FAILURE);
-  }
-
-  double *buffer_r = malloc(sndInfo_r.frames * sizeof(double));
+  buffer_r = malloc((sndInfo_r.frames * sndInfo_r.channels) * sizeof(double));
   if (buffer_r == NULL) {
     fprintf(stderr, "Could not allocate memory for file\n");
     sf_close(sndFile_r);
     exit(EXIT_FAILURE);
   }
 
-  long numFrames = sf_readf_double(sndFile_r, buffer_r, sndInfo_r.frames);
+  numFrames = sf_readf_double(sndFile_r, buffer_r, sndInfo_r.frames * sndInfo_r.channels);
   if (numFrames != sndInfo_r.frames) {
     fprintf(stderr, "Did not read enough frames for source\n");
     sf_close(sndFile_r);
@@ -56,10 +54,26 @@ readWav (char *filename, long *len) {
     exit(EXIT_FAILURE);
   }
 
+  if (sndInfo_r.channels == 2) {
+    double *buffer_m = malloc((sndInfo_r.frames) * sizeof(double));
+
+    for (int i = 0; i < sndInfo_r.frames; i++) {
+      buffer_m[i] = 0;
+
+      for(int j = 0; j < sndInfo_r.channels; j++) {
+        buffer_m[i] += buffer_r[i * sndInfo_r.channels + j];
+      }
+
+      buffer_m[i] /= sndInfo_r.channels;
+    }
+
+    sf_close(sndFile_r);
+    *len = numFrames;
+    return buffer_m;
+  }
+
   sf_close(sndFile_r);
-
   *len = numFrames;
-
   return buffer_r;
 }
 
@@ -89,8 +103,29 @@ writeWav (char *filename, double *y, long numFrames) {
   sf_close(sndFile);
 }
 
+#ifdef USE_SLOW_TURTLE_CONVOLUTION
+
+double *
+conv (double *a, long a_len, double *b, long b_len)
+{
+  double *convSignal = (double *) calloc ((a_len + b_len) - 1, sizeof (double));
+
+  for (long i = 0; i < (a_len + b_len) - 1; i++) {
+    double z = 0.0;
+    for (long j = 0; j <= i; ++j) {
+      z += ((j < a_len) && (i-j < b_len)) ? a[j] * b[i-j] : 0.0;
+    }
+    convSignal[i] = z;
+    g_print("%c[2J (turtle) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
+  }
+
+  return convSignal;
+}
+
+#elif USE_UDUK_INLINE_CONVOLUTION
+
 double 
-inline_double_multiply( double p1, double p2)
+inline_double_multiply (double p1, double p2)
 {
   double out;
   __asm__ __volatile__ ("fmul %2, %0"
@@ -99,7 +134,7 @@ inline_double_multiply( double p1, double p2)
 }
 
 double 
-inline_double_add( double p1, double p2)
+inline_double_add (double p1, double p2)
 {
   double out;
   __asm__ __volatile__ ("fadd %2, %0"
@@ -108,7 +143,7 @@ inline_double_add( double p1, double p2)
 }
 
 double *
-inline_conv (double *a, long a_len, double *b, long b_len)
+conv (double *a, long a_len, double *b, long b_len)
 {
   double *convSignal = (double *) calloc ((a_len + b_len) - 1, sizeof (double));
 
@@ -124,11 +159,23 @@ inline_conv (double *a, long a_len, double *b, long b_len)
       i1--;
       convSignal[i] = z;
     }
-    g_print("%c[2J %ld of %ld\n", 27, i, (a_len + b_len) - 1);
+    g_print("%c[2J (uduk) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
   }
 
   return convSignal;
 }
+
+#else
+
+double *
+conv (double *a, long a_len, double *b, long b_len)
+{
+  double *convSignal = (double *) calloc ((a_len + b_len) - 1, sizeof (double));
+  g_print("Under development, please recompile using \"-DUSE_UDUK_INLINE_CONVOLUTION\"\n");
+  return convSignal;
+}
+
+#endif
 
 int 
 main (int argc, char *argv[])
@@ -147,7 +194,7 @@ main (int argc, char *argv[])
   double *impulseSignal = readWav(argv[2], 
                                     &impulseLen);
 
-  double *convSignal = inline_conv(originalSignal, originalLen, impulseSignal, impulseLen);
+  double *convSignal = conv(originalSignal, originalLen, impulseSignal, impulseLen);
   
   double maximum = convSignal[0];
   for (long c = 1; c < (originalLen + impulseLen) - 1; c++) {
@@ -156,10 +203,9 @@ main (int argc, char *argv[])
     }
   }
 
-  float ratio = 0.666;
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long c = 0; c < (originalLen + impulseLen) - 1; c++) {
-    convSignal[c] = (convSignal[c] / maximum) * ratio; 
+    convSignal[c] = (convSignal[c] / maximum) * RATIO; 
   }
 
   writeWav(argv[3], convSignal, originalLen);
