@@ -164,10 +164,12 @@ conv (double *a, long a_len, double *b, long b_len)
             );  
     
     for (long j = 0; j < b_len; ) {
+      
       if (iz >= 0 && iz < a_len) {
         double m = inline_double_multiply(a[iz], b[j]);
         z = inline_double_add(z, m);
       }
+      
       iz--;
       convSignal[i] = z;
       
