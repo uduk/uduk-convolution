@@ -18,7 +18,7 @@ $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `
 ```
 
 ## Macro
-Default compilation without any macro is linasm
+Default compilation without any macro is UDUK Zuper-Fast IS™
 
 > pass macro to gcc:
 
