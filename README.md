@@ -18,7 +18,7 @@ $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `
 ```
 > pass macro to gcc
 
-> -DUSE_DEFAULT for linasm
+> default without any macro is linasm
 
 > -DUSE_UDUK_INLINE_CONVOLUTION for average turtle-ish UDUK
 
