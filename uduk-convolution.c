@@ -152,11 +152,11 @@ conv (double *a, long a_len, double *b, long b_len)
     double z, t;
     long iz; 
     
-    __asm__ ("mov %2, %1\n\t"
+    __asm__ __volatile__ ("mov %2, %1\n\t"
              "movd %1, %0\n\t"
            : "=x" (z), "=r" (t) : "E" (0.0f));
 
-    __asm__ ("mov %1, %0\n\t"
+    __asm__ __volatile__ ("mov %1, %0\n\t"
            : "=r" (iz)
            : "r" (i) 
             );  
