@@ -183,9 +183,7 @@ conv (double *a, long a_len, double *b, long b_len)
         : : "cc"
       ); 
     }
-    
-    g_print("%c[2J (uduk) %ld of %ld\n", 27, i, len);
-    
+
     __asm__ __volatile__ (
         "add $0x1, %0"
       : "+r" (i) 
