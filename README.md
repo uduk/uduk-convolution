@@ -34,7 +34,6 @@ Default compilation without any macro is linasm
 - GCC (https://gcc.gnu.org/)
 - pkg-config (https://www.freedesktop.org/wiki/Software/pkg-config/)
 - OpenMP (http://openmp.org/wp/)
-- Linasm (http://linasm.sourceforge.net/)
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 
