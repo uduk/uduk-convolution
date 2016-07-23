@@ -4,10 +4,17 @@ Written in pure C with inline assembly, uduk-convolution is a great tool to tail
 ## Fast direct convolution of two audio sources
 $ ./uduk-convolution input.wav cabinet.wav output.wav
 
-## Compiling
+## Compile
+### Linux
 
 ```
 $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
+```
+
+### Mac
+
+```
+$ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
 ```
 
 ## Requirements
