@@ -14,5 +14,5 @@ $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-confolution `pkg-co
 - OpenMP (http://openmp.org/wp/)
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
-- 
+
 [logo]: http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png
