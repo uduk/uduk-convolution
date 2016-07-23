@@ -147,9 +147,6 @@ main (int argc, char *argv[])
   double *impulseSignal = readWav(argv[2], 
                                     &impulseLen);
 
-  double *outputSignal = (double *) calloc (originalLen, 
-                                    sizeof (double));
-
   double *convSignal = inline_conv(originalSignal, originalLen, impulseSignal, impulseLen);
   
   double maximum = convSignal[0];
@@ -168,7 +165,6 @@ main (int argc, char *argv[])
   writeWav(argv[3], convSignal, originalLen);
 
   free(convSignal);
-  free(outputSignal);
   free(impulseSignal);
   free(originalSignal);
 
