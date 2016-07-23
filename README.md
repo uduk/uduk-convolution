@@ -11,6 +11,7 @@ $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-co
 ```
 
 ## Requirements
+- GCC (https://gcc.gnu.org/)
 - OpenMP (http://openmp.org/wp/)
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
