@@ -32,6 +32,7 @@ Default compilation without any macro is linasm
 
 ## Requirements
 - GCC (https://gcc.gnu.org/)
+- pkg-config (https://www.freedesktop.org/wiki/Software/pkg-config/)
 - OpenMP (http://openmp.org/wp/)
 - Linasm (http://linasm.sourceforge.net/)
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
