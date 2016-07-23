@@ -150,7 +150,7 @@ conv (double *a, long a_len, double *b, long b_len)
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < (a_len + b_len) - 1; i++) {
     double z = 0.0;
-    double i1 = i;
+    long i1 = i;
     for (long j = 0; j < b_len; j++) {
       if (i1 >= 0 && i1 < a_len) {
         double m = inline_double_multiply(a[i1], b[j]);
