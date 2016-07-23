@@ -149,11 +149,21 @@ conv (double *a, long a_len, double *b, long b_len)
 
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < (a_len + b_len) - 1; i++) {
-    double z = 0.0;
-    long i1 = i;
+    double z, t;
+    long iz; 
+    
+    __asm__ ("mov %2, %1\n\t"
+             "movd %1, %0\n\t"
+           : "=x" (z), "=r" (t) : "E" (0.0f));
+
+    __asm__ ("mov %1, %0\n\t"
+           : "=r" (iz)
+           : "r" (i) 
+            );  
+    
     for (long j = 0; j < b_len; j++) {
-      if (i1 >= 0 && i1 < a_len) {
-        double m = inline_double_multiply(a[i1], b[j]);
+      if (iz >= 0 && iz < a_len) {
+        double m = inline_double_multiply(a[iz], b[j]);
         z = inline_double_add(z, m);
       }
       i1--;
