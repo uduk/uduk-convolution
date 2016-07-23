@@ -23,4 +23,8 @@ $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `
 - Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 
+## TODO List
+- Support stereo impulse response
+- fix glitch
+
 ![alt text] (http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png)
