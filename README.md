@@ -1,5 +1,5 @@
 # uduk-convolution
-Fast convolution of two audio sources
+Fast direct convolution of two audio sources
 
 ## Usage
 $ uduk-convolution -i cabinet.wav -r input.wav -f -o output.wav
