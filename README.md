@@ -7,7 +7,7 @@ $ uduk-convolution -i cabinet.wav -r input.wav -f -o output.wav
 ## Compiling
 
 ```
-$ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-confolution `pkg-config --cflags --libs glib-2.0` -lsndfile
+$ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
 ```
 
 ## Requirements
