@@ -162,7 +162,6 @@ conv (double *a, long a_len, double *b, long b_len)
            : "r" (i) 
             );  
     
-    #pragma omp for schedule(dynamic, CHUNKSIZE)
     for (long j = 0; j < b_len; ) {
       
       if (iz >= 0 && iz < a_len) {
