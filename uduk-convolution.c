@@ -148,7 +148,6 @@ conv (double *a, long a_len, double *b, long b_len)
   long len = (a_len + b_len) - 1;
   double *convSignal = (double *) calloc (len, sizeof (double));
 
-  #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < len;) {
    
     double z, t;
@@ -163,6 +162,7 @@ conv (double *a, long a_len, double *b, long b_len)
            : "r" (i) 
             );  
     
+    #pragma omp for schedule(dynamic, CHUNKSIZE)
     for (long j = 0; j < b_len; ) {
       
       if (iz >= 0 && iz < a_len) {
