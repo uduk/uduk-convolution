@@ -159,9 +159,10 @@ main (int argc, char *argv[])
     }
   }
 
+  float ratio = 0.666;
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long c = 0; c < (originalLen + impulseLen) - 1; c++) {
-    convSignal[c] = (convSignal[c] / maximum); 
+    convSignal[c] = (convSignal[c] / maximum) * ratio; 
   }
 
   writeWav(argv[3], convSignal, originalLen);
