@@ -145,10 +145,12 @@ inline_double_add (double p1, double p2)
 double *
 conv (double *a, long a_len, double *b, long b_len)
 {
-  double *convSignal = (double *) calloc ((a_len + b_len) - 1, sizeof (double));
-
+  long len = (a_len + b_len) - 1;
+  double *convSignal = (double *) calloc (len, sizeof (double));
+  long i = 0;
+  
   #pragma omp for schedule(dynamic, CHUNKSIZE)
-  for (long i = 0; i < (a_len + b_len) - 1; i++) {
+  for (; i < len;) {
     double z, t;
     long iz; 
     
@@ -161,15 +163,28 @@ conv (double *a, long a_len, double *b, long b_len)
            : "r" (i) 
             );  
     
-    for (long j = 0; j < b_len; j++) {
+    for (long j = 0; j < b_len; ) {
       if (iz >= 0 && iz < a_len) {
         double m = inline_double_multiply(a[iz], b[j]);
         z = inline_double_add(z, m);
       }
       iz--;
       convSignal[i] = z;
+      
+      __asm__ __volatile__ (
+          "add $0x1, %0"
+        : "+r" (j) 
+        : : "cc"
+      ); 
     }
+    
     g_print("%c[2J (uduk) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
+    
+    __asm__ __volatile__ (
+        "add $0x1, %0"
+      : "+r" (i) 
+      : : "cc"
+    ); 
   }
 
   return convSignal;
