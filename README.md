@@ -1,5 +1,5 @@
 # uduk-convolution
-Written in pure C with inline assembly, uduk-convolution is a great tool to tailor your guitar sounds to be far more realistic. Currently, it only supports WAV both mono and stereo (PCM 16 bit) file. -- (beta version)
+Written in pure C with inline assembly (intel), uduk-convolution is a great tool to tailor your guitar sounds to be far more realistic. Currently, it only supports WAV both mono and stereo (PCM 16 bit) file. -- (beta version)
 
 ## Fast direct linear convolution of two audio sources
 $ ./uduk-convolution input.wav cabinet.wav output.wav
@@ -9,12 +9,6 @@ $ ./uduk-convolution input.wav cabinet.wav output.wav
 
 ```
 $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
-```
-
-### Mac
-
-```
-$ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
 ```
 
 ## Macro
