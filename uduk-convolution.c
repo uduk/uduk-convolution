@@ -161,7 +161,6 @@ main (int argc, char *argv[])
 
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long c = 0; c < (originalLen + impulseLen) - 1; c++) {
-    #pragma omp atomic write
     convSignal[c] = (convSignal[c] / maximum); 
   }
 
