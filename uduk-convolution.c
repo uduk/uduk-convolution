@@ -122,7 +122,7 @@ conv (double *a, long a_len, double *b, long b_len)
   return convSignal;
 }
 
-#elif USE_UDUK_INLINE_CONVOLUTION
+#else
 
 double 
 inline_double_multiply (double p1, double p2)
@@ -172,16 +172,6 @@ conv (double *a, long a_len, double *b, long b_len)
     g_print("%c[2J (uduk) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
   }
 
-  return convSignal;
-}
-
-#else
-
-double *
-conv (double *a, long a_len, double *b, long b_len)
-{
-  double *convSignal = (double *) calloc ((a_len + b_len) - 1, sizeof (double));
-  g_print("Under development, please recompile using \"-DUSE_UDUK_INLINE_CONVOLUTION\"\n");
   return convSignal;
 }
 
