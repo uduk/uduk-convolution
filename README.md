@@ -17,6 +17,9 @@ $ gcc -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-co
 $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `pkg-config --cflags --libs glib-2.0` -lsndfile
 ```
 
+## Free Impulse Response
+- (http://www.voxengo.com/impulses/)
+
 ## Requirements
 - GCC (https://gcc.gnu.org/)
 - OpenMP (http://openmp.org/wp/)
