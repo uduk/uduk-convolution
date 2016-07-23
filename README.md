@@ -22,8 +22,6 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 
 > pass macro to gcc:
 
-> -DUSE_UDUK_INLINE_CONVOLUTION for average turtle-ish UDUK
-
 > -DUSE_SLOW_TURTLE_CONVOLUTION for slow turtle convolution
 
 ## Free Impulse Response
