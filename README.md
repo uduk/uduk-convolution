@@ -18,7 +18,9 @@ $ clang-omp -Wall -O2 -fopenmp -std=c99 uduk-convolution.c -o uduk-convolution `
 ```
 > pass macro to gcc
 
-> -USE_UDUK_INLINE_CONVOLUTION for turtle-ish UDUK
+> -DUSE_DEFAULT for linasm
+
+> -DUSE_UDUK_INLINE_CONVOLUTION for turtle-ish UDUK
 
 > -DUSE_SLOW_TURTLE_CONVOLUTION for slow turtle convolution
 
