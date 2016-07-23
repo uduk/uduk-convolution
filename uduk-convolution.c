@@ -179,7 +179,7 @@ conv (double *a, long a_len, double *b, long b_len)
       ); 
     }
     
-    g_print("%c[2J (uduk) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
+    g_print("%c[2J (uduk) %ld of %ld\n", 27, i, len);
     
     __asm__ __volatile__ (
         "add $0x1, %0"
@@ -213,6 +213,7 @@ main (int argc, char *argv[])
   double *convSignal = conv(originalSignal, originalLen, impulseSignal, impulseLen);
   
   double maximum = convSignal[0];
+  #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long c = 1; c < (originalLen + impulseLen) - 1; c++) {
     if (convSignal[c] > maximum) {
       maximum  = convSignal[c];
