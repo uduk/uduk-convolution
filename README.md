@@ -1,5 +1,5 @@
 # uduk-convolution
-Fast direct convolution of two audio sources
+Fast direct convolution of two audio sources. Uduk Convolution is a great tool to tailor your guitar sounds.
 
 ## Usage
 $ uduk-convolution -i cabinet.wav -r input.wav -f -o output.wav
