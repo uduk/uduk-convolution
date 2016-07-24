@@ -1,3 +1,17 @@
+/*
+ *
+
+ o   o o-o   o   o o  o 
+ |   | |  \  |   | | /  
+ |   | |   O |   | OO   
+ |   | |  /  |   | | \  
+  o-o  o-o    o-o  o  o  Uduk Convolution v1.0
+
+  written by: iherlambang@gmail.com
+
+ *
+ */
+ 
 #include <stdio.h>
 #include <stdlib.h>
 
