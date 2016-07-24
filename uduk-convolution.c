@@ -29,7 +29,7 @@ readWav (char *filename, long *len) {
 
   SNDFILE *sndFile_r = sf_open(filename, SFM_READ, &sndInfo_r);
   if (sndFile_r == NULL) {
-    fprintf(stderr, "Error reading source file '%s': %s\n", filename, sf_strerror(sndFile_r));
+    fprintf(stderr, "sf_open: '%s': %s\n", filename, sf_strerror(sndFile_r));
     exit(EXIT_FAILURE);
   }
 
@@ -41,14 +41,14 @@ readWav (char *filename, long *len) {
 
   buffer_r = malloc((sndInfo_r.frames * sndInfo_r.channels) * sizeof(double));
   if (buffer_r == NULL) {
-    fprintf(stderr, "Could not allocate memory for file\n");
+    fprintf(stderr, "malloc error\n");
     sf_close(sndFile_r);
     exit(EXIT_FAILURE);
   }
 
   numFrames = sf_readf_double(sndFile_r, buffer_r, sndInfo_r.frames * sndInfo_r.channels);
   if (numFrames != sndInfo_r.frames) {
-    fprintf(stderr, "Did not read enough frames for source\n");
+    fprintf(stderr, "sf_readf_double problem\n");
     sf_close(sndFile_r);
     free(buffer_r);
     exit(EXIT_FAILURE);
@@ -87,14 +87,14 @@ writeWav (char *filename, double *y, long numFrames) {
 
   SNDFILE *sndFile = sf_open(filename, SFM_WRITE, &info);
   if (sndFile == NULL) {
-    fprintf(stderr, "Error opening sound file '%s': %s\n", filename, sf_strerror(sndFile));
+    fprintf(stderr, "sfopen: '%s': %s\n", filename, sf_strerror(sndFile));
     exit(EXIT_FAILURE);
   }
 
   long writtenFrames = sf_writef_double(sndFile, (const double *) y, numFrames);
 
   if (writtenFrames != numFrames) {
-    fprintf(stderr, "Did not write enough frames for source\n");
+    fprintf(stderr, "sf_writef_double problem\n");
     sf_close(sndFile);
     exit(EXIT_FAILURE);
   }
