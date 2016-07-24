@@ -33,6 +33,9 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 ## TODO List
 - tweaks++
 
+## LICENSE
+NO License, FREE as an AIR
+
 ## E-mail
 Feel free to drop me some bugs and issues iherlambang@gmail.com
 
