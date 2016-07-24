@@ -18,8 +18,9 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 
 > -DUSE_SLOW_TURTLE_CONVOLUTION for slow turtle convolution
 
-## Free Impulse Response
+## Theory
 - (http://www.indiana.edu/~emusic/etext/synthesis/chapter4_convolution.shtml)
+- (http://allsignalprocessing.com/convolution-of-signals-why/)
 - (http://www.voxengo.com/impulses/)
 
 ## Requirements
