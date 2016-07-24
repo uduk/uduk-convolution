@@ -15,7 +15,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <sndfile.h>
-#include <glib.h>
 
 #define CHUNKSIZE 8
 #define RATIO     0.666
