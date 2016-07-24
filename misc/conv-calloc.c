@@ -25,12 +25,11 @@ main (int argc, char *argv[])
 
   double is[4] = {2.0, 4.0, 3.0, 6.0};
   double ir[5] = {1.0, 5.0, 2.0, 3.0, 4.0};
-  double r[8];
 
   double **iSignal = (double **) calloc (r_len * is_len, sizeof (double *));
   double *convSignal = (double *) calloc (r_len, sizeof (double));
 
-  long i, j, z, z_inc = 0;
+  long i, j, z_inc = 0;
 
   // Multiply with padding
   for (i = 0; i < is_len; i++) {
