@@ -1,5 +1,7 @@
 # UDUK Effects
 
+All parameters are hardcoded.
+
 ## Tremolo
 ```
 $ gcc -Wall -O2 -fopenmp -std=c99 uduk-($arg).c -o uduk-tremolo -lsndfile
