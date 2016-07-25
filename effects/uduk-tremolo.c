@@ -142,7 +142,7 @@ main (int argc, char *argv[])
   for (long i = 0; i < originalLen; i++) {
     double z = inline_double_multiply(3.14159265358979323846, F);
     double ans;
-    __asm__ __volatile__ ("fsin" : "=t" (ans) : "0" (sin(2 * i * z)));
+    __asm__ __volatile__ ("fsin" : "=t" (ans) : "0" ((2 * i * z)));
     double tremolo = inline_double_add(1,  inline_double_multiply(alpha,  ans));
     originalSignal[i] = inline_double_multiply(originalSignal[i], tremolo);
   }
