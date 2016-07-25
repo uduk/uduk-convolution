@@ -2,11 +2,16 @@
 
 ## Tremolo
 ```
-$ gcc -Wall -O2 -fopenmp -std=c99 uduk-tremolo.c -o uduk-tremolo -lsndfile
+$ gcc -Wall -O2 -fopenmp -std=c99 uduk-($arg).c -o uduk-tremolo -lsndfile
+```
+
+## Delay
+```
+$ gcc -Wall -O2 -fopenmp -std=c99 uduk-($arg).c -o uduk-delay -lsndfile
 ```
 
 ## Usage
-$ ./uduk-tremolo input.wav output.wav
+$ ./uduk-($arg) input.wav output.wav
 
 Average processing time on 61 MB WAVE audio, Microsoft PCM, 16 bit, stereo 44100 Hz
 
