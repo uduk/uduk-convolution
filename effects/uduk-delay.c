@@ -143,7 +143,7 @@ main (int argc, char *argv[])
 
   free(delaySignal);
   free(outputSignal);
-	free(originalSignal);
+  free(originalSignal);
 
-	return 0;
+  return 0;
 }
