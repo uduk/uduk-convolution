@@ -28,9 +28,7 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.mathworks.com/examples/signal/)
 
 ## Requirements
-- GCC (https://gcc.gnu.org/)
-- pkg-config (https://www.freedesktop.org/wiki/Software/pkg-config/)
-- OpenMP (http://openmp.org/wp/)
+- GCC (https://gcc.gnu.org/) with OpenMP support
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 
 ## TODO List
