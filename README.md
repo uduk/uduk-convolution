@@ -22,6 +22,9 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.indiana.edu/~emusic/etext/synthesis/chapter4_convolution.shtml)
 - (http://allsignalprocessing.com/convolution-of-signals-why/)
 - (http://www.voxengo.com/impulses/)
+- (http://www.iowahills.com/A4IIRBilinearTransform.html)
+- (http://www.barrgroup.com/Embedded-Systems/How-To/Digital-Filters-FIR-IIR)
+- (http://www.musicdsp.org/)
 
 ## Requirements
 - GCC (https://gcc.gnu.org/)
