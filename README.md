@@ -25,6 +25,7 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.barrgroup.com/Embedded-Systems/How-To/Digital-Filters-FIR-IIR)
 - (http://www.musicdsp.org/)
 - (http://www.mathworks.com/examples/signal/)
+- (http://music.columbia.edu/cmc/MusicAndComputers/chapter4/04_06.php)
 
 ## Free Impulse Response
 - (https://fokkie.home.xs4all.nl/IR.htm#Springreverb)
