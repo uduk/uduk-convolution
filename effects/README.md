@@ -2,14 +2,9 @@
 
 All parameters are hardcoded.
 
-## Tremolo
+## Compile
 ```
-$ gcc -Wall -O2 -fopenmp -std=c99 uduk-tremolo.c -o uduk-tremolo -lsndfile
-```
-
-## Delay
-```
-$ gcc -Wall -O2 -fopenmp -std=c99 uduk-delay.c -o uduk-delay -lsndfile
+$ gcc -Wall -O2 -fopenmp -std=c99 uduk-$1.c -o uduk-$1 -lsndfile
 ```
 
 ## Usage
