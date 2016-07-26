@@ -217,8 +217,9 @@ main (int argc, char *argv[])
   double maximum = convSignal[0];
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long c = 1; c < (originalLen + impulseLen) - 1; c++) {
-    if (convSignal[c] > maximum) {
-      maximum  = convSignal[c];
+    double m = fabs(convSignal[c]);
+    if (m > maximum) {
+      maximum  = m;
     }
   }
 
