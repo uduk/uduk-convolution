@@ -92,7 +92,6 @@ writeWav (char *filename, double *y, long numFrames) {
 double *
 convolve (double *originalSignal, long originalLen, double *impulseSignal, long impulseLen)
 {
-  // fabs, print glib, conv, const
   long convLen = (originalLen + impulseLen) - 1;
   long iLen = impulseLen - 1;
   long oLen = originalLen - 1;
