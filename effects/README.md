@@ -1,6 +1,7 @@
 # UDUK Effects
 
 All parameters are hardcoded, written in a rush - Under development.
+Considering this (https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) onRaised turtle duck performance.
 
 ## Compile
 ```
