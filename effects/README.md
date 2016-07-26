@@ -1,6 +1,6 @@
 # UDUK Effects
 
-All parameters are hardcoded, written in rush.
+All parameters are hardcoded, written in a rush - Under development.
 
 ## Compile
 ```
