@@ -21,11 +21,15 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 ## Theory
 - (http://www.indiana.edu/~emusic/etext/synthesis/chapter4_convolution.shtml)
 - (http://allsignalprocessing.com/convolution-of-signals-why/)
-- (http://www.voxengo.com/impulses/)
 - (http://www.iowahills.com/A4IIRBilinearTransform.html)
 - (http://www.barrgroup.com/Embedded-Systems/How-To/Digital-Filters-FIR-IIR)
 - (http://www.musicdsp.org/)
 - (http://www.mathworks.com/examples/signal/)
+
+## Free Impulse Response
+- (https://fokkie.home.xs4all.nl/IR.htm#Springreverb)
+- (http://www.voxengo.com/impulses/)
+- http://cabs.kalthallen.de/kalthallen_free.html
 
 ## Requirements
 - GCC (https://gcc.gnu.org/) with OpenMP support
