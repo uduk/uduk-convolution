@@ -18,6 +18,16 @@ Average processing time on 61 MB WAVE audio, Microsoft PCM, 16 bit, stereo 44100
 | user          | 0m0.982s  |
 | sys           | 0m0.126s  |
 
-	
+## LICENSE
+
+```
+/*
+ * UDUK: All Left Reserved.
+ *
+ * No Licensed under the UDUK license (the "NO License").  
+ * You may use this file without any exception and/or restriction.
+ *
+ */
+```	
 	
 	  
