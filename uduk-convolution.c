@@ -115,7 +115,7 @@ conv (double *a, long a_len, double *b, long b_len)
       z += ((j < a_len) && (i-j < b_len)) ? a[j] * b[i-j] : 0.0;
     }
     convSignal[i] = z;
-    g_print("%c[2J (turtle) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
+    printf("%c[2J (turtle) %ld of %ld\n", 27, i, (a_len + b_len) - 1);
   }
 
   return convSignal;
