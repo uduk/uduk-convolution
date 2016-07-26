@@ -175,10 +175,16 @@ fuzz (double *originalSignal, long originalLen)
     fuzzSignal[i] = fuzzSignal[i] * maximumAbs  / maximumY;
   }
 
+  #pragma omp for schedule(dynamic, CHUNKSIZE)
+  for (long i = 0; i < originalLen; i++) {
+    fuzzSignal[i] = fuzzSignal[i] / 1 + fabs(fuzzSignal[i]);
+  }
+  
   free(q);
   free(z);
   free(expq);
   free(signum);
+  
   return fuzzSignal;
 }
 
