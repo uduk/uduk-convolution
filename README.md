@@ -31,7 +31,6 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - GCC (https://gcc.gnu.org/)
 - pkg-config (https://www.freedesktop.org/wiki/Software/pkg-config/)
 - OpenMP (http://openmp.org/wp/)
-- Glib 2.0+ (http://ftp.gnome.org/pub/gnome/sources/glib/)
 - libsndfile (http://www.mega-nerd.com/libsndfile/)
 
 ## TODO List
