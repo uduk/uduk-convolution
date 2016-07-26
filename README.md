@@ -25,6 +25,7 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.iowahills.com/A4IIRBilinearTransform.html)
 - (http://www.barrgroup.com/Embedded-Systems/How-To/Digital-Filters-FIR-IIR)
 - (http://www.musicdsp.org/)
+- (http://www.mathworks.com/examples/signal/)
 
 ## Requirements
 - GCC (https://gcc.gnu.org/)
