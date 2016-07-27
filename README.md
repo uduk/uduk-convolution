@@ -11,7 +11,7 @@ $ ./uduk-convolution input.wav cabinet.wav output.wav
 ### Linux
 
 ```
-$ gcc -Wall -O2 -fopenmp -lsndfile -std=c99 uduk-convolution.c -o uduk-convolution
+$ {clang-omp | gcc} -Wall -O2 -fopenmp -lsndfile -std=c99 uduk-convolution.c -o uduk-convolution
 ```
 
 ## Macro
