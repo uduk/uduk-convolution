@@ -5,7 +5,7 @@ Considering this (https://gcc.gnu.org/onlinedocs/gcc/Vector-Extensions.html) onR
 
 ## Compile
 ```
-$ gcc -Wall -O2 -fopenmp -std=c99 uduk-$1.c -o uduk-$1 -lsndfile
+$ {clang-omp | gcc} -Wall -O2 -fopenmp -std=c99 uduk-$1.c -o uduk-$1 -lsndfile
 ```
 
 ## Usage
