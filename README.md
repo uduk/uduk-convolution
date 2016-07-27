@@ -1,8 +1,6 @@
 # uduk-convolution
 
-GratiZZZ
-
-Currently, it only supports WAV both mono and stereo (PCM 16 bit) file. -- (beta version)
+WAV (PCM 16 bit) only. -- (beta version)
 
 ## Fast direct linear convolution of two audio sources
 $ ./uduk-convolution input.wav cabinet.wav output.wav
