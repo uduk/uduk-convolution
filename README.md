@@ -26,6 +26,8 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.musicdsp.org/)
 - (http://www.mathworks.com/examples/signal/)
 - (http://music.columbia.edu/cmc/MusicAndComputers/chapter4/04_06.php)
+- (http://www.cs.cf.ac.uk/Dave/CM0268/PDF/10_CM0268_Audio_FX.pdf)
+- (http://www.music.mcgill.ca/~ich/classes/dafx_book.pdf)
 
 ## Free Impulse Response
 - (https://fokkie.home.xs4all.nl/IR.htm#Springreverb)
