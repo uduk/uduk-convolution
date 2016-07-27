@@ -93,16 +93,17 @@ bitcrusher (double *originalSignal, long originalLen)
 {
   double *bitSignal = (double *) calloc (originalLen, sizeof (double));
 
-  float phaser = 0,
+  float crusher = 0,
          last = 0;
-
-  double step = pow(0.8, 16);
+  
+  int bit = 16;
+  double step = pow(0.8, bit);
 
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < originalLen; i++) {
-    phaser += 0.8;
-    if (phaser >= 1.0) {
-      phaser -= 1.0;
+    crusher += 0.8;
+    if (crusher >= 1.0) {
+      crusher -= 1.0;
       last = step * floor(originalSignal[i] / step + 0.5);
     }
     bitSignal[i] = last;
