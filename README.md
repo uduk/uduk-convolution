@@ -1,6 +1,6 @@
 # uduk-convolution
 
-WAV (PCM 16 bit) only. -- (beta version)
+WAV 44100 (PCM 16 bit) only. -- (beta version)
 
 ## Fast direct linear convolution of two audio sources
 $ ./uduk-convolution input.wav cabinet.wav output.wav
