@@ -32,12 +32,6 @@ readWav (char *filename, long *len) {
     exit(EXIT_FAILURE);
   }
 
-  if (sndInfo_r.format != (SF_FORMAT_WAV | SF_FORMAT_PCM_16)) {
-    fprintf(stderr, "Input should be 16bit Wav\n");
-    sf_close(sndFile_r);
-    exit(EXIT_FAILURE);
-  }
-
   buffer_r = malloc((sndInfo_r.frames * sndInfo_r.channels) * sizeof(double));
   if (buffer_r == NULL) {
     fprintf(stderr, "malloc error\n");
