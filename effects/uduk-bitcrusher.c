@@ -19,7 +19,7 @@ readWav (char *filename, long *len) {
   }
 
   if (sndInfo_r.format != (SF_FORMAT_WAV)) {
-    fprintf(stderr, "Input should be 16bit Wav\n");
+    fprintf(stderr, "Input should be Wav\n");
     sf_close(sndFile_r);
     exit(EXIT_FAILURE);
   }
