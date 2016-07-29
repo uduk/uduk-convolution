@@ -31,12 +31,6 @@ readWav (char *filename, long *len) {
     fprintf(stderr, "Error reading source file '%s': %s\n", filename, sf_strerror(sndFile_r));
     exit(EXIT_FAILURE);
   }
-
-  if (sndInfo_r.format != (SF_FORMAT_WAV)) {
-    fprintf(stderr, "Input should be 16bit Wav\n");
-    sf_close(sndFile_r);
-    exit(EXIT_FAILURE);
-  }
   
   buffer_r = malloc((sndInfo_r.frames * sndInfo_r.channels) * sizeof(double));
   if (buffer_r == NULL) {
