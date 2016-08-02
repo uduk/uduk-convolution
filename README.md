@@ -33,7 +33,8 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 ## Free Impulse Response
 - (https://fokkie.home.xs4all.nl/IR.htm#Springreverb)
 - (http://www.voxengo.com/impulses/)
-- http://cabs.kalthallen.de/kalthallen_free.html
+- (http://cabs.kalthallen.de/kalthallen_free.html)
+- (http://www.redwirez.com/freecab-done.jsp)
 
 ## Requirements
 - GCC (https://gcc.gnu.org/) with OpenMP support
