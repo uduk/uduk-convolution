@@ -51,7 +51,7 @@ blur (long originalLen)
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < originalLen; i++) {
     random = ((float) rand() / (float) (RAND_MAX + 1));
-    blurSignal[i] = 0.5 * ((2.f * ((random * c2) + (random * c2) + (random * c2)) - 3.f * (c2 - 1.f)) * c3); 
+    blurSignal[i] = 0.1 * ((2.f * ((random * c2) + (random * c2) + (random * c2)) - 3.f * (c2 - 1.f)) * c3); 
     blurSignal[i] += 0.6 * sin(w * i * 0.6);
   }
  
