@@ -6,3 +6,6 @@ The theory is that the tones - between 100 - 10.000 Hz - stimulate neurons to fi
 ```
 $ {clang-omp | gcc} -Wall -O2 -fopenmp -lsndfile -std=c99 uduk-$1.c -o uduk-$1
 ```
+
+## Reference
+- (https://en.wikipedia.org/wiki/Temporal_theory_(hearing))
