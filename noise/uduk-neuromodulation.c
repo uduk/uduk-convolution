@@ -40,14 +40,14 @@ neuromodulation (long originalLen)
 
   srand(time(NULL));
 
-  unsigned int freq = 100 + rand() % 10000;
-  double w = 2 * M_PI * freq / fs;
-
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long x = 0; x < originalLen / fs; x++) {
 
     int step = x * fs;
     int q = 11025;
+
+    unsigned int freq = 100 + rand() % 1000;
+    double w = 2 * M_PI * freq / fs;
 
     for (long i = x * fs; i < step + q; i++) {
       nSignal[i] = 0.6 * sin(w * i * 0.6);
@@ -57,7 +57,7 @@ neuromodulation (long originalLen)
       nSignal[i] = 0.0;
     }
    
-    freq = 100 + rand() % 10000;
+    freq = 1000 + rand() % 10000;
     w = 2 * M_PI * freq / fs;
 
     for (long i = step + q * 2; i < step + q * 3; i++) {
