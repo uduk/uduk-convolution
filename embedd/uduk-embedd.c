@@ -87,7 +87,7 @@ double *
 embedd (double *originalSignal, long originalLen)
 {
   double *eSignal = (double *) calloc (originalLen, sizeof (double));
-  double w = 2 * M_PI * 6 / 44100;
+  double w = 2 * M_PI * 18.98 / 44100;
 
   #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (long i = 0; i < originalLen; i++) {
