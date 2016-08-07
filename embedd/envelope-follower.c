@@ -11,6 +11,7 @@ envelopeFollower (double *originalSignal, long originalLen)
 
   double *envelopeBuffer = (double *) calloc (originalLen, sizeof (double));
 
+  #pragma omp for schedule(dynamic, CHUNKSIZE)
   for (int i = 0; i < originalLen; i++) {
 
     float envelopeIn = fabs(originalSignal[i]);
