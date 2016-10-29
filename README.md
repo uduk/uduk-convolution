@@ -35,6 +35,7 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 - (http://www.voxengo.com/impulses/)
 - (http://cabs.kalthallen.de/kalthallen_free.html)
 - (http://www.redwirez.com/freecab-done.jsp)
+- (https://github.com/swh/ladspa/tree/master/impulses)
 
 ## Requirements
 - GCC (https://gcc.gnu.org/) with OpenMP support
