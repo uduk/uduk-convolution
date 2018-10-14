@@ -33,7 +33,6 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 ## Free Impulse Response
 - (https://fokkie.home.xs4all.nl/IR.htm#Springreverb)
 - (http://www.voxengo.com/impulses/)
-- (http://cabs.kalthallen.de/kalthallen_free.html)
 - (http://www.redwirez.com/freecab-done.jsp)
 - (https://github.com/swh/ladspa/tree/master/impulses)
 
@@ -43,14 +42,12 @@ Default compilation without any macro is UDUK Zuper-Fast IS™
 
 ## TODO List
 - tweaks++
+- stereo
 
 ## DEMO
 (https://www.youtube.com/watch?v=tblBkkvpa7g)
 
 ## LICENSE
 NO License, FREE as an AIR
-
-## E-mail
-Feel free to drop me some bugs and issues iherlambang@gmail.com
 
 ![alt text] (http://icons.iconarchive.com/icons/kearone/comicons/128/linux-icon.png)
